@@ -61,7 +61,7 @@ Monitoring is handled using Prometheus and Grafana to track model performance me
 **Deployment**: Configured with Docker and Kubernetes to scale monitoring across GKE nodes.
 
 ### 6. Active Learning and Retraining
-Airflow DAG (`active_learning_dag.py`) manages the active learning process. It ingests new data, validates it, and triggers model retraining if necessary. This ensures the model is continuously improved with the latest data. Retraining uses DP-SGD for differential privacy.
+Airflow DAG (`active_learning.py`) manages the active learning process. It ingests new data, validates it, and triggers model retraining if necessary. This ensures the model is continuously improved with the latest data. Retraining uses DP-SGD for differential privacy.
 
 **Technologies**: Airflow, TFDV, TensorFlow Privacy, TensorFlow
 
