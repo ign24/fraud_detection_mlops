@@ -1,0 +1,19 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: data-ingestion-job
+spec:
+  template:
+    spec:
+      containers:
+      - name: data-ingestion
+        image: gcr.io/[PROJECT_ID]/data_ingestion:[TAG]
+        resources:
+          limits:
+            memory: "512Mi"
+            cpu: "500m"
+      env:
+      - name: KAFKA_BROKER_URL
+        value: "localhost:9092"
+      restartPolicy: Never
+  backoffLimit: 3
