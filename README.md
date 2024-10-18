@@ -53,7 +53,7 @@ Once the model is trained, it is deployed using Flask in a Docker container. Kub
 
 **Endpoint**: `/predict` to predict whether a transaction is fraudulent.
 
-**Deployment**: Deployment configurations are defined in `infra/kubernetes/model_deployment.yaml`.
+**Deployment**: Deployment configurations are defined in `kubernetes/model_deployment.yaml`.
 
 ### 5. Monitoring Pipeline
 Monitoring is handled using Prometheus and Grafana to track model performance metrics such as latency, accuracy, and data drift metrics detected by Evidently.
