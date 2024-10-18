@@ -71,7 +71,7 @@ Airflow DAG (`active_learning.py`) manages the active learning process. It inges
 ### 1. Setup Environment
 - Clone the repository:
   ```bash
-  git clone [repository_url](https://github.com/ign24/fraud_detection_mlops/)
+  git clone https://github.com/ign24/fraud_detection_mlops/
   ```
 - Install dependencies:
   ```bash
