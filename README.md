@@ -71,7 +71,7 @@ Airflow DAG (`active_learning.py`) manages the active learning process. It inges
 ### 1. Setup Environment
 - Clone the repository:
   ```bash
-  git clone [repository_url]
+  git clone [[repository_url](https://github.com/ign24/fraud_detection_mlops/)]
   ```
 - Install dependencies:
   ```bash
@@ -87,7 +87,7 @@ Airflow DAG (`active_learning.py`) manages the active learning process. It inges
 ### 2. Deploy Pipelines with Kubernetes
 - **Data Ingestion**: Deploy the data ingestion pipeline using the provided YAML file.
   ```bash
-  kubectl apply -f infra/kubernetes/data_ingestion.yaml
+  kubectl apply -f kubernetes/data_ingestion.yaml
   ```
 - **Training, Deployment, Monitoring**: Similarly deploy the other components using the corresponding YAML files.
 
