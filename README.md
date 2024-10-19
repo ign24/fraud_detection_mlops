@@ -32,7 +32,7 @@ The data ingestion process utilizes Kafka to stream transactions into the system
 
 **Technologies**: Kafka, Python
 
-**Deployment**: Deployed as a Docker container and orchestrated using Kubernetes. YAML configuration for deployment is located at `infra/kubernetes/data_ingestion.yaml`.
+**Deployment**: Deployed as a Docker container and orchestrated using Kubernetes. YAML configuration for deployment is located at `kubernetes/data_ingestion.yaml`.
 
 ### 2. Data Preparation and Validation
 Data preparation is done using SMOTE to balance the classes and standard preprocessing steps. We use TFDV to validate new incoming data to ensure it matches the schema and identify potential data drift.
