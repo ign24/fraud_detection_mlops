@@ -14,37 +14,22 @@ Key features include:
 
 ![ML Lifecycle Diagram](ml_lifecycle_diagram.png)
 
-## Technologies Used
-- **Google Cloud Platform (GCP)**: GKE, Google Cloud Storage, Vertex AI (optional for future scaling)
-- **Docker**: For containerizing all services and pipelines
-- **Kubernetes**: For deploying and orchestrating all containers on GKE
-- **Kafka**: For streaming data ingestion
-- **TensorFlow & Keras**: For building and training the fraud detection model
-- **TFDV**: For validating data and detecting drift
-- **Airflow**: For managing the ML pipeline DAGs, ensuring automated retraining and deployment
-- **Prometheus & Grafana**: For monitoring model performance and metrics
-- **TensorFlow Privacy**: For implementing DP-SGD to ensure data privacy during training
-
-
 ## Workflow
 ### 1. Data Ingestion
 The data ingestion process utilizes Kafka to stream transactions into the system. A Kafka consumer ingests this data and stores it in a CSV file (`data/new_transactions.csv`).
 
-**Technologies**: Kafka, Python
 
 **Deployment**: Deployed as a Docker container and orchestrated using Kubernetes. YAML configuration for deployment is located at `kubernetes/data_ingestion.yaml`.
 
 ### 2. Data Preparation and Validation
 Data preparation is done using SMOTE to balance the classes and standard preprocessing steps. We use TFDV to validate new incoming data to ensure it matches the schema and identify potential data drift.
 
-**Technologies**: Python, TFDV, SMOTE
 
 **Deployment**: Data preparation is also containerized and orchestrated using Kubernetes. Airflow is used to manage data quality over time.
 
 ### 3. Training Pipeline
 The training pipeline is triggered for the initial training of the model. It takes the prepared data and trains a fraud detection model using TensorFlow, implementing Differential Privacy with DP-SGD to protect sensitive data.
 
-**Technologies**: TensorFlow, TensorFlow Privacy, Python
 
 **Deployment**: Deployed on Kubernetes, leveraging GCP resources for scalability.
 
